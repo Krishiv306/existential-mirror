@@ -1,0 +1,30 @@
+{
+  "onboarding": [
+    { "id": "name", "question": "What do they call you?", "type": "text", "placeholder": "Your name..." },
+    { "id": "age", "question": "How many years have you carried this weight?", "type": "text", "placeholder": "Your age..." },
+    { "id": "occupation", "question": "What do you do with your days?", "type": "text", "placeholder": "Your occupation..." },
+    { "id": "awake", "question": "What keeps you awake at 3am?", "type": "textarea", "placeholder": "The thoughts that won't sleep..." },
+    { "id": "fear", "question": "What do you fear most?", "type": "textarea", "placeholder": "Speak it into the dark..." },
+    { "id": "meaning", "question": "What gives your life meaning?", "type": "textarea", "placeholder": "What anchors you..." },
+    { "id": "happy", "question": "Are you happy?", "type": "choice", "options": ["Yes, genuinely", "Sometimes", "I'm trying to be", "Not really", "I don't know anymore"] },
+    { "id": "understood", "question": "Do you often feel understood?", "type": "choice", "options": ["Always", "By some", "Rarely", "Never", "I stopped expecting it"] },
+    { "id": "oneSentence", "question": "Describe yourself in one sentence.", "type": "textarea", "placeholder": "One truth about you..." }
+  ],
+  "mirror": [
+    { "id": "m1", "question": "Would you rather know the painful truth, or live in a comfortable illusion?", "options": ["The truth, always", "The illusion, if it's beautiful enough"], "weights": { "kafka": [2,0], "camus": [1,0], "nietzsche": [1,0], "jung": [0,1], "rumi": [0,2] } },
+    { "id": "m2", "question": "Is loneliness a kind of freedom?", "options": ["Yes — solitude is sovereignty", "No — connection is everything"], "weights": { "kafka": [2,0], "kierkegaard": [2,0], "dostoevsky": [0,2], "rumi": [0,2], "plath": [1,0] } },
+    { "id": "m3", "question": "Do people love you — or the version of you they invented?", "options": ["The version they invented", "Me, truly"], "weights": { "kafka": [2,0], "plath": [2,0], "jung": [1,0], "rumi": [0,2], "jaunelia": [1,0] } },
+    { "id": "m4", "question": "If suffering disappeared, would art survive?", "options": ["Art would die with suffering", "Art transcends pain"], "weights": { "nietzsche": [2,0], "dostoevsky": [2,0], "camus": [1,0], "rumi": [0,1], "plath": [1,0] } },
+    { "id": "m5", "question": "Which speaks louder to you?", "options": ["Reason and logic", "Emotion and instinct"], "weights": { "nietzsche": [1,0], "camus": [1,0], "jung": [0,2], "rumi": [0,2], "jaunelia": [0,1] } },
+    { "id": "m6", "question": "Is the universe indifferent to human suffering?", "options": ["Yes — we are alone in the cosmos", "No — meaning is woven into existence"], "weights": { "camus": [2,0], "nietzsche": [1,0], "kafka": [1,0], "rumi": [0,2], "dostoevsky": [0,1] } },
+    { "id": "m7", "question": "What defines a person more?", "options": ["Their wounds", "Their choices"], "weights": { "plath": [2,0], "kafka": [1,0], "nietzsche": [0,2], "camus": [0,1], "jung": [1,1] } },
+    { "id": "m8", "question": "Can you love someone you truly understand?", "options": ["Understanding destroys romance", "True love requires full understanding"], "weights": { "jaunelia": [2,0], "plath": [1,0], "rumi": [0,2], "dostoevsky": [0,2], "kierkegaard": [1,0] } }
+  ],
+  "daily": [
+    "How heavy was today?",
+    "What was one beautiful thing that happened?",
+    "What was one painful thing?",
+    "What emotion dominates you right now?",
+    "Describe your thoughts tonight in a few words."
+  ]
+}

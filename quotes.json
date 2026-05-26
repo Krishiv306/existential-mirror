@@ -1,0 +1,127 @@
+{
+  "thinkers": {
+    "kafka": {
+      "name": "Franz Kafka",
+      "tagline": "You carry silent storms inside ordinary conversations.",
+      "description": "Like Kafka, you inhabit the gap between what is felt and what can be expressed. The bureaucracy of your inner world is vast, labyrinthine, and deeply personal. You sense the absurdity of existence without surrendering to it.",
+      "profile": "Introspective • Quietly tormented • Acutely observant • Existentially burdened",
+      "quote": "In the struggle between yourself and the world, second the world.",
+      "color": "#8B0000"
+    },
+    "dostoevsky": {
+      "name": "Fyodor Dostoevsky",
+      "tagline": "You contain multitudes, and they argue with each other constantly.",
+      "description": "You are drawn to the extremes of human experience — suffering, redemption, love, destruction. Like Dostoevsky, you understand that the human soul is both wretched and transcendent, and you refuse to look away from either.",
+      "profile": "Passionately empathetic • Morally complex • Spiritually restless • Intensely human",
+      "quote": "Pain and suffering are always inevitable for a large intelligence and a deep heart.",
+      "color": "#4A3728"
+    },
+    "jung": {
+      "name": "Carl Jung",
+      "tagline": "You've always suspected that your dreams know more than your waking mind.",
+      "description": "You navigate life through symbols, archetypes, and the language of the unconscious. Like Jung, you believe that to truly know another, one must first descend into oneself. The shadow is not your enemy — it is your teacher.",
+      "profile": "Symbolically minded • Deeply introspective • Psychologically curious • Archetype-aware",
+      "quote": "Until you make the unconscious conscious, it will direct your life and you will call it fate.",
+      "color": "#2C4A3E"
+    },
+    "nietzsche": {
+      "name": "Friedrich Nietzsche",
+      "tagline": "You've looked into the abyss and dared it to blink first.",
+      "description": "You refuse comfortable certainties. Like Nietzsche, you suspect that meaning must be forged, not found — that the greatest human act is creation in the face of chaos. You demand more from life than it usually offers.",
+      "profile": "Fiercely independent • Iconoclastic • Aesthetically driven • Will-powered",
+      "quote": "He who has a why to live can bear almost any how.",
+      "color": "#1A1A2E"
+    },
+    "plath": {
+      "name": "Sylvia Plath",
+      "tagline": "You feel everything at a frequency most people cannot hear.",
+      "description": "Your interior life is vivid, raw, and relentless. Like Plath, you transform pain into precision — your wounds become your most honest art. Beauty and darkness are not opposites to you. They are the same thing.",
+      "profile": "Acutely sensitive • Artistically channeled • Beautifully wounded • Intensely alive",
+      "quote": "I am not resigned. I am not hopeless. I am furious.",
+      "color": "#3D0C11"
+    },
+    "camus": {
+      "name": "Albert Camus",
+      "tagline": "You know life is absurd — and you've decided to love it anyway.",
+      "description": "Like Camus, you've confronted the silence of the universe and chosen defiance over despair. You believe in revolt, in joy, in the stubborn insistence on living fully in spite of meaninglessness.",
+      "profile": "Philosophically resilient • Warmly rebellious • Absurdly alive • Courageously present",
+      "quote": "One must imagine Sisyphus happy.",
+      "color": "#1B4332"
+    },
+    "rumi": {
+      "name": "Jalal ad-Din Rumi",
+      "tagline": "You search for the divine in every human encounter.",
+      "description": "Like Rumi, your soul moves toward connection — with others, with the transcendent, with the mystery beneath everyday life. You believe love is not just an emotion but a spiritual force that reorganizes the universe.",
+      "profile": "Mystically inclined • Deeply loving • Spiritually open • Poetically alive",
+      "quote": "Out beyond ideas of wrongdoing and rightdoing, there is a field. I'll meet you there.",
+      "color": "#5C3317"
+    },
+    "jaunelia": {
+      "name": "Jaun Elia",
+      "tagline": "You love the most when you know it will break you.",
+      "description": "Like Jaun Elia, you are drawn to the ruins of the heart. You find beauty not in happiness but in the exquisite ache of longing. Your philosophy is lived in the dark hours, in the unfinished sentences, in the loves that never fully arrived.",
+      "profile": "Romantically tragic • Philosophically nihilistic • Poetically ruthless • Beautifully lost",
+      "quote": "میں بھی بہت عجیب ہوں — I am also very strange.",
+      "color": "#2D1B33"
+    },
+    "kierkegaard": {
+      "name": "Søren Kierkegaard",
+      "tagline": "You understand that the leap of faith is taken in absolute darkness.",
+      "description": "Like Kierkegaard, you dwell in the anxiety of choice — that terrifying freedom of being the author of your own existence. You know that despair is not weakness; it is the beginning of authentic selfhood.",
+      "profile": "Existentially anxious • Authenticity-seeking • Spiritually wrestling • Philosophically alone",
+      "quote": "Anxiety is the dizziness of freedom.",
+      "color": "#1C2951"
+    }
+  },
+  "moods": {
+    "sad": [
+      "Even the darkest night will end and the sun will rise. — Victor Hugo",
+      "Grief is the price we pay for love. It means you loved well.",
+      "You are not broken. You are mid-transformation.",
+      "The wound is the place where the light enters you. — Rumi",
+      "Let yourself grieve. Rivers don't apologize for flowing."
+    ],
+    "anxious": [
+      "You are not your thoughts. You are the one watching them.",
+      "Anxiety is excitement without breath. Breathe.",
+      "The present moment always survives. You are here.",
+      "You have survived every hard day so far. That is your record.",
+      "Worry is interest paid on a debt you may never owe."
+    ],
+    "hopeful": [
+      "You are becoming. That is enough.",
+      "Hope is not naive. It is radical courage.",
+      "The seed does not know it will become a forest — but it grows anyway.",
+      "Your light illuminates rooms you haven't even entered yet.",
+      "Something beautiful is still on its way to you."
+    ],
+    "lonely": [
+      "Even stars burn in isolation and still illuminate the dark.",
+      "Solitude is not loneliness. One is chosen. The other arrives uninvited. You can learn to host it.",
+      "You are never entirely alone. You carry everyone who ever shaped you.",
+      "The most profound connections are sometimes with the person you are still becoming.",
+      "Your loneliness is a room. You don't have to live there permanently."
+    ],
+    "angry": [
+      "Anger is grief in its most honest form. What are you mourning?",
+      "Your anger knows something your logic hasn't caught up to yet.",
+      "Righteous fury is love with nowhere to go. Direct it wisely.",
+      "Let the fire clarify, not consume.",
+      "Behind every anger is an unmet need. What do you need?"
+    ],
+    "confused": [
+      "Confusion is clarity's waiting room.",
+      "Not knowing is not failure. It is the honest beginning of understanding.",
+      "The fog is not permanent. It is just weather.",
+      "You don't have to have answers. Questions are enough for now.",
+      "Being lost means you were somewhere. You are still somewhere."
+    ],
+    "neutral": [
+      "Some days are for existing, not performing. That is valid.",
+      "Stillness is not emptiness. It is the space between notes that makes music.",
+      "Even ordinary moments are miracles in disguise.",
+      "You are here. That is never nothing.",
+      "Rest is part of the work. The pause is part of the song."
+    ]
+  }
+}

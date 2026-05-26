@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Existential Mirror</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Noise Overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- Mood Bar -->
+  <div id="mood-bar"></div>
+
+  <!-- App Navigation -->
+  <nav id="app-nav">
+    <a class="nav-logo" onclick="App.goHome()" style="cursor:none">✦ Existential Mirror</a>
+    <div class="nav-links">
+      <a class="nav-link" id="nav-link-home" onclick="App.goHome()">Home</a>
+      <a class="nav-link" onclick="App.goToMirror()">Mirror Test</a>
+      <a class="nav-link" onclick="App.setApiKey()">AI Key</a>
+      <a class="nav-link" onclick="App.resetUser()">Reset</a>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!--  SCREEN 1: LANDING                        -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="screen active" id="screen-landing">
+    <div class="landing-eyebrow">A philosophical experience</div>
+    <h1 class="landing-title">
+      Existential<br><span>Mirror</span>
+    </h1>
+    <p class="landing-subtitle">
+      Some mirrors reflect faces.<br>
+      This one reflects existence.
+    </p>
+    <div class="landing-line"></div>
+    <button class="btn-ghost" onclick="App.beginReflection()">Begin Reflection</button>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!--  SCREEN 2: ONBOARDING                     -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="screen" id="screen-onboarding">
+    <div class="question-container" id="onboarding-container">
+      <div class="question-number" id="q-number">01 / 09</div>
+      <div class="question-text" id="q-text">What do they call you?</div>
+      <div id="q-input-area">
+        <input class="question-input" id="q-input" type="text" placeholder="Your name..." autocomplete="off">
+      </div>
+      <div class="question-nav">
+        <button class="btn-ghost" onclick="App.prevOnboarding()" style="padding:0.7rem 1.5rem;font-size:0.65rem">← Back</button>
+        <button class="btn-primary" onclick="App.nextOnboarding()" style="padding:0.7rem 1.5rem;font-size:0.65rem">Continue →</button>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="q-progress" style="width:0%"></div>
+      </div>
+      <div class="studying-msg" id="q-studying"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!--  SCREEN 3: LOADING                        -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="screen" id="screen-loading">
+    <div class="loading-text" id="loading-message">Mapping your consciousness...</div>
+    <div class="loading-dots">
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!--  SCREEN 4: HOME DASHBOARD                 -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="screen" id="screen-home">
+    <div class="home-inner">
+
+      <!-- Greeting -->
+      <div class="greeting-block">
+        <div class="greeting-time" id="greeting-time">Good evening.</div>
+        <div class="greeting-name" id="greeting-name">Welcome back.</div>
+        <div class="greeting-sub">How heavy was today?</div>
+      </div>
+
+      <!-- Daily Reflection -->
+      <div class="daily-card">
+        <div class="card-label">Daily Reflection</div>
+        <div class="card-question" id="daily-question">What emotion dominates you right now?</div>
+        <textarea class="daily-textarea" id="daily-input" placeholder="Write freely. This is your space..."></textarea>
+        <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">
+          <button class="analyze-btn" onclick="App.analyzeDailyEntry()">Reflect →</button>
+          <span style="font-family:var(--sans);font-size:0.6rem;color:var(--text-dim);letter-spacing:0.2em;">AI will detect your mood and respond</span>
+        </div>
+        <div class="ai-response" id="ai-response">
+          <div class="ai-response-text" id="ai-response-text"></div>
+          <div class="ai-response-mood" id="ai-response-mood"></div>
+        </div>
+      </div>
+
+      <!-- Navigation Cards -->
+      <div class="home-nav">
+        <a class="nav-card" onclick="App.goToMirror()">
+          <div class="nav-card-label">Core Experience</div>
+          <div class="nav-card-title">The Mirror Test</div>
+          <div style="font-family:var(--serif);font-size:0.85rem;color:var(--text-dim);font-style:italic;margin-top:0.5rem;line-height:1.6;">Discover which philosopher or poet you most resemble.</div>
+          <div class="nav-card-arrow">↗</div>
+        </a>
+        <a class="nav-card" onclick="App.openProfile()">
+          <div class="nav-card-label">Your Existence</div>
+          <div class="nav-card-title">Your Profile</div>
+          <div style="font-family:var(--serif);font-size:0.85rem;color:var(--text-dim);font-style:italic;margin-top:0.5rem;line-height:1.6;">Review your answers, your fears, your meaning.</div>
+          <div class="nav-card-arrow">↗</div>
+        </a>
+      </div>
+
+      <!-- Philosophical Quote of the Day -->
+      <div style="margin-top:3rem;padding-top:3rem;border-top:1px solid var(--border);">
+        <div style="font-family:var(--sans);font-size:0.6rem;letter-spacing:0.4em;color:var(--text-dim);margin-bottom:1.2rem;">Tonight's Reflection</div>
+        <div id="quote-of-day" style="font-family:var(--display);font-size:1.2rem;font-style:italic;color:var(--text);line-height:1.8;"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!--  SCREEN 5: MIRROR TEST                    -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="screen" id="screen-mirror">
+
+    <!-- Intro -->
+    <div class="mirror-intro" id="mirror-intro">
+      <div style="font-family:var(--sans);font-size:0.6rem;letter-spacing:0.4em;color:var(--text-dim);margin-bottom:2rem;">The Mirror Test</div>
+      <div class="mirror-intro-title">Look into the mirror.</div>
+      <p class="mirror-intro-sub">
+        Eight questions. No right answers.<br>
+        Only reflections of who you are.<br><br>
+        At the end, the mirror will speak.
+      </p>
+      <button class="btn-ghost" onclick="App.startMirrorTest()">Enter the Mirror</button>
+    </div>
+
+    <!-- Questions -->
+    <div class="mirror-question-block" id="mirror-question-block" style="display:none;max-width:620px;width:100%;">
+      <div class="mirror-q-number" id="mirror-q-num">01 · 08</div>
+      <div class="mirror-q-text" id="mirror-q-text">Loading...</div>
+      <div class="mirror-options" id="mirror-options"></div>
+      <div class="mirror-progress">
+        <div class="mirror-progress-fill" id="mirror-prog-fill" style="width:0%"></div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!--  SCREEN 6: RESULT                         -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="screen" id="screen-result">
+    <div class="result-container">
+      <div class="result-eyebrow">The mirror has spoken</div>
+      <div class="result-thinker" id="result-thinker"></div>
+      <div class="result-tagline" id="result-tagline"></div>
+      <div class="result-divider"></div>
+      <div class="result-description" id="result-description"></div>
+      <div class="result-profile" id="result-profile"></div>
+      <div class="result-quote" id="result-quote"></div>
+      <div class="result-actions">
+        <button class="btn-ghost" onclick="App.goHome()">Return Home</button>
+        <button class="btn-primary" onclick="App.goToMirror()">Retake Test</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!--  SCREEN 7: PROFILE                        -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="screen" id="screen-profile">
+    <div class="home-inner" style="max-width:680px;">
+      <div style="margin-bottom:3rem;">
+        <div style="font-family:var(--sans);font-size:0.6rem;letter-spacing:0.4em;color:var(--text-dim);margin-bottom:1rem;">Your Existence</div>
+        <div style="font-family:var(--display);font-size:2.5rem;font-style:italic;color:var(--text);" id="profile-name">Profile</div>
+      </div>
+      <div id="profile-fields"></div>
+      <div style="margin-top:3rem;">
+        <button class="btn-ghost" onclick="App.goHome()">← Back</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="personalityLogic.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Additional App methods for profile + quote
+    App.openProfile = function() {
+      const data = this.data;
+      document.getElementById('profile-name').textContent = data.name || 'Unknown';
+      const fields = document.getElementById('profile-fields');
+      const items = [
+        { label: 'Age', key: 'age' },
+        { label: 'Occupation', key: 'occupation' },
+        { label: 'What keeps you awake', key: 'awake' },
+        { label: 'Greatest fear', key: 'fear' },
+        { label: 'What gives life meaning', key: 'meaning' },
+        { label: 'Happiness', key: 'happy' },
+        { label: 'Feeling understood', key: 'understood' },
+        { label: 'In one sentence', key: 'oneSentence' },
+      ];
+      fields.innerHTML = items.map(item => `
+        <div style="margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border);">
+          <div style="font-family:var(--sans);font-size:0.6rem;letter-spacing:0.3em;color:var(--text-dim);margin-bottom:0.5rem;text-transform:uppercase;">${item.label}</div>
+          <div style="font-family:var(--serif);font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.7;">${data[item.key] || '—'}</div>
+        </div>
+      `).join('');
+
+      if (data.mirrorResult) {
+        const t = (window.FALLBACK_QUOTES || {}).thinkers || {};
+        const thinker = t[data.mirrorResult.primary];
+        if (thinker) {
+          fields.innerHTML += `
+            <div style="background:var(--glass);border:1px solid var(--glass-border);padding:2rem;border-left:3px solid var(--accent);">
+              <div style="font-family:var(--sans);font-size:0.6rem;letter-spacing:0.3em;color:var(--text-dim);margin-bottom:1rem;">MIRROR RESULT</div>
+              <div style="font-family:var(--display);font-size:1.5rem;font-style:italic;color:var(--accent);margin-bottom:0.5rem;">${thinker.name}</div>
+              <div style="font-family:var(--serif);font-size:0.95rem;font-style:italic;color:var(--text-dim);">${thinker.tagline}</div>
+            </div>
+          `;
+        }
+      }
+
+      this.showScreen('profile');
+    };
+
+    // Load daily quote
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const qEl = document.getElementById('quote-of-day');
+        if (!qEl) return;
+        const quotes = [
+          "The most terrifying thing is to accept oneself completely. — Carl Jung",
+          "In the middle of difficulty lies opportunity. — Albert Einstein",
+          "I am not afraid of storms, for I am learning to sail my ship. — Louisa May Alcott",
+          "The wound is the place where the light enters you. — Rumi",
+          "One must imagine Sisyphus happy. — Albert Camus",
+          "He who has a why to live can bear almost any how. — Nietzsche",
+          "Anxiety is the dizziness of freedom. — Kierkegaard",
+          "Pain and suffering are always inevitable for a large intelligence. — Dostoevsky",
+          "I took a deep breath and listened to the old brag of my heart: I am, I am, I am. — Sylvia Plath",
+          "میں بھی بہت عجیب ہوں — I am also very strange. — Jaun Elia"
+        ];
+        qEl.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
